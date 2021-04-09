@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import {ReactComponent as LogoImage} from '../../assets/logo.svg'
 
@@ -11,8 +12,12 @@ const Home = () => {
             </div>
             <nav>
                 <ul>
-                    <li>Perfil</li>
-                    <li>Início</li>
+                    <li>
+                        <Link>Perfil</Link>
+                    </li>
+                    <li>
+                        <Link>Início</Link>
+                    </li>
                 </ul>
             </nav>
         </header>
