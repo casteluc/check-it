@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import {ReactComponent as LogoImage} from '../../assets/logo.svg'
 
-const Home = () => {
+const Header = () => {
     return (
         <header>
             <div></div> {/* temporary element, will be replaced by the dark mode button */}
@@ -13,10 +13,10 @@ const Home = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link>Perfil</Link>
+                        {/* <Link>Perfil</Link> */}
                     </li>
                     <li>
-                        <Link>Início</Link>
+                        {/* <Link>Início</Link> */}
                     </li>
                 </ul>
             </nav>
@@ -24,4 +24,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Header
