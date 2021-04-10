@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Task = () => {
+const Task = (props) => {
     return (
         <div>
-            <p contentEditable="true">Testando tarefa</p>
+            <p contentEditable="true">{props.task.content}</p>
             <div className="delete-button"></div>
             <div className="checkbox"></div>
         </div>

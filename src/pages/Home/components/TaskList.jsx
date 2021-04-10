@@ -1,17 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import Task from './Task'
+import Task from '../../../common/Task/Task'
 
-const TaskList = () => {
-    let tasks = [1,2,3] /* temporary variable */
-
+const TaskList = (props) => {
     return (
         <div>
-            {tasks.map(task => {
-                return <Task content={task}></Task>
+            {props.tasks.map(task => {
+                return <Task key={task.id} task={task}></Task>
             })}    
         </div>
     )
 }
 
-export default TaskList
+const mapStateToProps = (state) => ({
+    tasks: state.tasks
+})
+
+export default connect(mapStateToProps)(TaskList) 
