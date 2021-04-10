@@ -21,7 +21,6 @@ export default function tasksReducer(state = initialState, action) {
                     completed: false
                 }
             ]
-        
         case 'tasks/editTask':
             return state.map(task => {
                 if (task.id === action.payload.targetId) {
@@ -31,7 +30,12 @@ export default function tasksReducer(state = initialState, action) {
 
                 return task
             })
-    
+        case 'tasks/deleteTask':
+            return state.filter(task => {
+                if (task.id !== action.payload.targetId) {
+                    return task
+                }
+            })
         default:
             return state
     }
