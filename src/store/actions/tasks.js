@@ -1,9 +1,13 @@
-import { ADD_TODO } from '../actionTypes'
+export const addTask = (task) => ({
+    type: 'tasks/addTask',
+    payload: task.content
+})
 
-let id = 0
-export const addTask = (todo) => ({
-    type: ADD_TODO,
+export const editTask = (task) => ({
+    type: 'tasks/editTask',
     payload: {
-        content: todo.content,
+        targetId: task.id,
+        newContent: task.content,
     }
 })
+

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 let initialState = []
 
 function nextTaskId(tasks) {
@@ -10,19 +9,29 @@ function getCurrentTime() {
     return new Date()
 }
 
-export default function(state = initialState, action) {
+export default function tasksReducer(state = initialState, action) {
     switch(action.type) {
-        case 'ADD_TODO':
+        case 'tasks/addTask':
             return [
                 ...state,
                 {
                     id: nextTaskId(state),
-                    content: action.payload.content,
+                    content: action.payload,
                     createdTime: getCurrentTime(),
                     completed: false
                 }
             ]
+        
+        case 'tasks/editTask':
+            return state.map(task => {
+                if (task.id === action.payload.targetId) {
+                    task.content = action.payload.newContent
+                    return task
+                }
 
+                return task
+            })
+    
         default:
             return state
     }
