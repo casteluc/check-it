@@ -21,21 +21,28 @@ export default function tasksReducer(state = initialState, action) {
                     completed: false
                 }
             ]
+
         case 'tasks/editTask':
             return state.map(task => {
                 if (task.id === action.payload.targetId) {
-                    task.content = action.payload.newContent
-                    return task
+                    return {...task, content: action.payload.newContent}
                 }
 
                 return task
             })
+
         case 'tasks/deleteTask':
-            return state.filter(task => {
-                if (task.id !== action.payload.targetId) {
+            return state.filter(task => task.id !== action.payload.targetId)
+
+        case 'tasks/completeTask':
+            return state.map(task => {
+                if (task.id === action.payload.targetId) {
+                    return {...task, completed: !task.completed}
+                } else {
                     return task
                 }
             })
+
         default:
             return state
     }
