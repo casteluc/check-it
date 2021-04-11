@@ -22,7 +22,7 @@ const Task = (props) => {
     
     return (
         <TaskContainer>
-            <p contentEditable onBlur={handleEdit} suppressContentEditableWarning={true}>{props.task.content}</p>
+            <p spellcheck="false" contentEditable onBlur={handleEdit} suppressContentEditableWarning={true}>{props.task.content}</p>
 
             <div className="buttons">
                 <Button className="delete-button" onClick={handleDelete}>
