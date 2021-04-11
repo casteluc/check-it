@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react'
-
 import { connect } from 'react-redux'
 import { addTask } from '../../../store/actions/tasks'
 
