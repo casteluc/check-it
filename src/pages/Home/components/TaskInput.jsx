@@ -18,7 +18,7 @@ const TaskInput = (props) => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <input type="text" name="task" placeholder="Insira uma nova tarefa aqui"/>
+            <input autocomplete="off" type="text" name="task" placeholder="Insira uma nova tarefa aqui"/>
             <input type="submit" value="adicionar"/>
         </Form>
     )
