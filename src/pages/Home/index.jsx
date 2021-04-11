@@ -3,15 +3,15 @@ import React from 'react'
 import TaskInput from './components/TaskInput'
 import TaskList from './components/TaskList'
 
-import { HomePage } from './style'
+import { HomeContainer } from './style'
 
 const Home = () => {
     return (
-        <HomePage>
+        <HomeContainer>
             <h2>Check List</h2>
             <TaskInput/>
             <TaskList/>
-        </HomePage>
+        </HomeContainer>
     )
 }
 

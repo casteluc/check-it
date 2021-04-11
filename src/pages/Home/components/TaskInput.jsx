@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { addTask } from '../../../store/actions/tasks'
 
-import { InputForm } from '../style'
+import { Form } from '../style'
 
 const TaskInput = (props) => {
     const handleSubmit = (e) => {
@@ -17,10 +17,10 @@ const TaskInput = (props) => {
     }
 
     return (
-        <InputForm onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <input type="text" name="task" placeholder="Insira uma nova tarefa aqui"/>
             <input type="submit" value="adicionar"/>
-        </InputForm>
+        </Form>
     )
 }
 
