@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
-const SignInPage = ({goToSignUp}) => {
+import { signIn } from '../../../store/actions/user'
+
+const SignInPage = ({goToSignUp, ...props}) => {
+    const [credentials, setCredentials] = useState({
+        email: '',
+        password: '',
+    })
+
+    const handleChange = (e) => {
+        setCredentials({...credentials, [e.target.name]: e.target.value})
+    }
+
     const handleSignIn = (e) => {
         e.preventDefault()
-        console.log("sign in")
+        props.signIn(credentials)
     }
 
     const handleGoogleLogin = (e) => {
@@ -14,8 +26,8 @@ const SignInPage = ({goToSignUp}) => {
         <div>
             <h3>Sign In</h3>
             <form onSubmit={handleSignIn}>
-                <input type="email" name="email" placeholder="email"/>
-                <input type="password" name="password" placeholder="senha"/>
+                <input type="email" name="email" placeholder="email" onChange={handleChange}/>
+                <input type="password" name="password" placeholder="senha" onChange={handleChange}/>
                 <input type="submit" value="Registrar"/>
             </form>
             <button onClick={handleGoogleLogin}>login with google</button>
@@ -24,4 +36,4 @@ const SignInPage = ({goToSignUp}) => {
     )
 }
 
-export default SignInPage
+export default connect(null, {signIn})(SignInPage)

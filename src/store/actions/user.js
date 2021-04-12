@@ -1,6 +1,6 @@
-export const signIn = (user) => ({
+export const signIn = (credentials) => ({
     type: 'user/signIn',
-    payload: user
+    payload: credentials
 })
 
 export const signUp = (credentials) => ({
