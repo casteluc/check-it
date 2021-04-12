@@ -1,30 +1,8 @@
-import { auth } from "../../firebase"
+import signIn from '../../auth/signIn'
+import signUp from '../../auth/signUp'
 
 let initialState = {
     user: null
-}
-
-const signUp = (credentials) => {
-    auth.createUserWithEmailAndPassword(credentials.email, credentials.password)
-        .then( res => {
-            return res.user 
-        }).catch( err => {
-            console.log(err.code)
-            console.log(err.message)
-            return null
-        })
-}
-
-const signIn = (credentials) => {
-    auth.signInWithEmailAndPassword(credentials.email, credentials.password)
-        .then( res => {
-            console.log(res.user)
-            return res.user
-        }).catch( err => {
-            console.log(err.code)
-            console.log(err.message)
-            return null
-        })
 }
 
 export default function tasksReducer(state = initialState, action) {
