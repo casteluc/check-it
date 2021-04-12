@@ -34,13 +34,27 @@ export const Button = styled.button`
     :hover {
         cursor: pointer;
     }
-        
+
     svg {
         width: 20px;
         height: 20px;
-        
+    }
+
+    svg.check {
         path {
-            ${props => !props.completed ? "stroke: transparent" : ""};
+            ${props => !props.completed ? "stroke: #838383" : ""};
+        }
+    }
+
+    svg.trash {
+
+        :hover {
+            path {
+                fill: #FD4E0C
+            } 
+        }
+        path {
+            fill: #6d6d6d;
         }
     }
 
