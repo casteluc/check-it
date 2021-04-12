@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import signIn from '../../../services/auth/signIn'
 
 const SignInPage = ({goToSignUp, ...props}) => {
-    const dispatch = useDispatch()
     const [credentials, setCredentials] = useState({
         email: '',
         password: '',
@@ -17,8 +15,7 @@ const SignInPage = ({goToSignUp, ...props}) => {
 
     const handleSignIn = (e) => {
         e.preventDefault()
-        dispatch(signIn(credentials))
-        console.log("singed in")
+        signIn(credentials)
     }
 
     const handleGoogleLogin = (e) => {

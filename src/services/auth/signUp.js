@@ -1,16 +1,12 @@
 import { auth } from "../../firebase"
-import { signUp } from '../../store/ducks/auth'
 
-const authSignUp = (credentials) => {
-    return (dispatch) => {
-        auth.createUserWithEmailAndPassword(credentials.email, credentials.password)
-            .then((res) => {
-                console.log(res)
-                dispatch(signUp(res.user))
-            }).catch((err) => {
-                console.log(err)
-            })
-    }
+const signUp = ({email, password}) => {
+    auth.createUserWithEmailAndPassword(email, password)
+        .then((res) => {
+            console.log("registrado e logado")
+        }).catch((err) => {
+            console.log(err)
+        })
 }
 
-export default authSignUp
+export default signUp
