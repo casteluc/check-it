@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import signUp from '../../../services/auth/signUp'
+
 
 const SignUpPage = ({goToSignIn, ...props}) => {
+    const dispatch = useDispatch()
     const [credentials, setCredentials] = useState({
         nickname: '',
         email: '',
@@ -14,6 +19,7 @@ const SignUpPage = ({goToSignIn, ...props}) => {
     
     const handleSignUp = (e) => {
         e.preventDefault()
+        dispatch(signUp(credentials))
         console.log("singed up")
     }
 
