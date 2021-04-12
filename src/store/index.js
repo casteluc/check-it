@@ -1,12 +1,12 @@
-import { createStore, combineReducers } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 
 import tasksReducer from './ducks/tasks'
+import authReducer from './ducks/auth'
 
-const rootReducer = combineReducers({
-    tasks: tasksReducer,
-}) 
-
-const store = () => createStore(rootReducer)
-
-export default store
+export default configureStore({
+    reducer: {
+        tasks: tasksReducer,
+        auth: authReducer,
+    }
+})
 
