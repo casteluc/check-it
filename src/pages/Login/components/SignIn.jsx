@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import signIn from '../../../services/auth/signIn'
 
@@ -33,6 +34,7 @@ const SignInPage = ({goToSignUp, ...props}) => {
                 <input type="submit" value="Registrar"/>
             </form>
             <button onClick={handleGoogleLogin}>login with google</button>
+            <Link to="/">go to home</Link>
             <p onClick={() => {goToSignUp()}}>go to sign up</p>
         </div>
     )

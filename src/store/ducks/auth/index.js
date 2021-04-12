@@ -6,10 +6,7 @@ export const signIn = createAction('auth/signIn')
 export const signUp = createAction('auth/signUp')
 
 export default createReducer(initalState, {
-    [signIn.type]: (state, action) => {
-        console.log(action.payload)
-        ({...state, user: true})
-    },
+    [signIn.type]: (state, action) => ({...state, user: action.payload}),
 
     [signUp.type]: (state, action) => ({...state, user: true}),
 })
