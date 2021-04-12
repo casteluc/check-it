@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { signUp } from '../../../store/actions/user'
 
 const SignUpPage = ({goToSignIn, ...props}) => {
     const [credentials, setCredentials] = useState({
@@ -16,7 +14,7 @@ const SignUpPage = ({goToSignIn, ...props}) => {
     
     const handleSignUp = (e) => {
         e.preventDefault()
-        props.signUp(credentials)
+        console.log("singed up")
     }
 
     return (
@@ -34,4 +32,4 @@ const SignUpPage = ({goToSignIn, ...props}) => {
     )
 }
 
-export default connect(null, {signUp})(SignUpPage)
+export default SignUpPage

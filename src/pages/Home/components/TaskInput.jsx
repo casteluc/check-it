@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { addTask } from '../../../store/actions/tasks'
+import { addTask } from '../../../store/ducks/tasks'
 
 import { Form } from '../style'
 

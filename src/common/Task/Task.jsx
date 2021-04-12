@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { editTask, deleteTask, completeTask } from '../../store/actions/tasks'
+import { editTask, deleteTask, completeTask } from '../../store/ducks/tasks'
 
 import {ReactComponent as TrashImage} from '../../assets/trash.svg'
 import {ReactComponent as CheckImage} from '../../assets/check.svg'
@@ -9,15 +9,15 @@ import { TaskContainer, Button} from './style'
 
 const Task = (props) => {
     const handleEdit = (e) => {
-        props.editTask({id: props.task.id, content: e.target.innerHTML})
+        props.editTask({targetId: props.task.id, content: e.target.innerHTML})
     }
 
     const handleDelete = (e) => {
-        props.deleteTask(props.task.id)
+        props.deleteTask({targetId: props.task.id})
     }
     
     const handleComplete = (e) => {
-        props.completeTask(props.task.id)
+        props.completeTask({targetId: props.task.id})
     }
     
     return (
