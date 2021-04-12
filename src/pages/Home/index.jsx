@@ -3,7 +3,7 @@ import React from 'react'
 import TaskInput from './components/TaskInput'
 import TaskList from './components/TaskList'
 
-import signOut from '../../services/auth/signOut'
+import { signOut } from '../../services/auth/signOut'
 
 import { HomeContainer } from './style'
 

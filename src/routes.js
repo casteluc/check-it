@@ -1,14 +1,13 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
-import firebase from './firebase'
+import { auth } from './firebase'
 
 import Home from './pages/Home';
 import Login from './pages/Login';
 
 const CustomRoute = ({isPrivate, ...props}) => {
-    const user = firebase.auth().currentUser;
+    const user = auth.currentUser;
     
     if (isPrivate && !user) {
         return <Redirect to="/login"/>

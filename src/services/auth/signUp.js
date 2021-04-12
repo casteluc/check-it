@@ -1,6 +1,6 @@
 import { auth } from "../../firebase"
 
-const signUp = ({email, password}) => {
+export const signUp = ({email, password}) => {
     auth.createUserWithEmailAndPassword(email, password)
         .then((res) => {
             console.log("registrado e logado")
@@ -8,5 +8,3 @@ const signUp = ({email, password}) => {
             console.log(err)
         })
 }
-
-export default signUp

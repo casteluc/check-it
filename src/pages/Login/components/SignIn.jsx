@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import signIn from '../../../services/auth/signIn'
+import { signIn, signInWithGoogle } from '../../../services/auth/signIn'
 
 const SignInPage = ({goToSignUp, ...props}) => {
     const [credentials, setCredentials] = useState({
@@ -19,7 +19,7 @@ const SignInPage = ({goToSignUp, ...props}) => {
     }
 
     const handleGoogleLogin = (e) => {
-        console.log("sign in with google")
+        signInWithGoogle()
     }
 
     return (

@@ -1,6 +1,6 @@
-import { auth } from "../../firebase"
+import { auth, googleProvider } from "../../firebase"
 
-const signIn = ({email, password}) => {
+export const signIn = ({email, password}) => {
     auth.signInWithEmailAndPassword(email, password)
         .then((res) => {
             console.log("logado")
@@ -9,4 +9,11 @@ const signIn = ({email, password}) => {
         })
 }
 
-export default signIn
+export const signInWithGoogle = () => {
+    auth.signInWithPopup(googleProvider)
+        .then(res => {
+            console.log(res)
+        }).catch(err => {
+            console.log(err)
+        })
+}
