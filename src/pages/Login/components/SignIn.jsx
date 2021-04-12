@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignIn = ({goToSignUp}) => {
+const SignInPage = ({goToSignUp}) => {
     const handleSignIn = (e) => {
         e.preventDefault()
         console.log("sign in")
@@ -24,4 +24,4 @@ const SignIn = ({goToSignUp}) => {
     )
 }
 
-export default SignIn
+export default SignInPage

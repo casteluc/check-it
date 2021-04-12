@@ -19,6 +19,6 @@ const server = firebase.initializeApp({
 })
 
 export const auth = server.auth()
-// export const firestore = server.firestore()
+export const provider = new firebase.auth.GoogleAuthProvider()
 
 export default server
