@@ -1,9 +1,14 @@
-import { auth } from "../../firebase"
+import { db, auth } from '../../firebase'
+
+
+
 
 export const signUp = ({email, password}) => {
     auth.createUserWithEmailAndPassword(email, password)
         .then((res) => {
-            console.log("registrado e logado")
+            let uid = res.user.uid
+            db.collection("users").doc(uid).set({})
+            db.collection("uids").doc(uid).set({})
         }).catch((err) => {
             console.log(err)
         })
