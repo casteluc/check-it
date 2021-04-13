@@ -1,15 +1,6 @@
-import { db, auth, googleProvider } from "../../firebase"
+import { db, auth, googleProvider } from "../firebase"
 
-export const signIn = ({email, password}) => {
-    auth.signInWithEmailAndPassword(email, password)
-        .then((res) => {
-            console.log("logado")
-        }).catch((err) => {
-            console.log(err)
-        })
-}
-
-export const signInWithGoogle = () => {
+const signInWithGoogle = () => {
     auth.signInWithPopup(googleProvider)
         .then(res => {
             let uid = res.user.uid
@@ -30,3 +21,5 @@ export const signInWithGoogle = () => {
             console.log(err)
         })
 }
+
+export default signInWithGoogle

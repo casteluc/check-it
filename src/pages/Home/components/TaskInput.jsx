@@ -1,13 +1,15 @@
-import { connect } from 'react-redux'
-import { addTask } from '../../../store/ducks/tasks'
+import { useDispatch } from 'react-redux'
+import { fectchAddTask } from '../../../store/ducks/tasks/thunks'
 
 import { Form } from '../style'
 
 const TaskInput = (props) => {
+    const dispatch = useDispatch()
+
     const handleSubmit = (e) => {
-        let taskContent = e.target.task.value
-        if (taskContent) {
-            props.addTask({content: taskContent})
+        let content = e.target.task.value
+        if (content) {
+            dispatch(fectchAddTask(content))
             e.target.task.value = ""
         }
         
@@ -22,4 +24,4 @@ const TaskInput = (props) => {
     )
 }
 
-export default connect(null, {addTask})(TaskInput)
+export default TaskInput

@@ -1,6 +1,6 @@
-import { auth } from "../../firebase"
+import { auth } from "../firebase"
 
-export const signOut = () => {
+const signOut = () => {
     auth.signOut()
         .then(res => {
             console.log("deslogado")
@@ -8,3 +8,5 @@ export const signOut = () => {
             console.log(err)
         })
 }
+
+export default signOut

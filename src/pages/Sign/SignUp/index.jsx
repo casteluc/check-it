@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { signUp } from '../../../services/auth/signUp'
+import signUp from '../../../auth/signUp'
 import { LoginContainer, Form, Button, RedirectLink } from '../style'
 
 

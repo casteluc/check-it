@@ -1,9 +1,6 @@
-import { db, auth } from '../../firebase'
+import { db, auth } from '../firebase'
 
-
-
-
-export const signUp = ({email, password}) => {
+const signUp = ({email, password}) => {
     auth.createUserWithEmailAndPassword(email, password)
         .then((res) => {
             let uid = res.user.uid
@@ -13,3 +10,5 @@ export const signUp = ({email, password}) => {
             console.log(err)
         })
 }
+
+export default signUp

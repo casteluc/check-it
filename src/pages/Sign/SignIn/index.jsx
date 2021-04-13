@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-import { signIn, signInWithGoogle } from '../../../services/auth/signIn'
+import signIn from '../../../auth/signIn'
+import signInWithGoogle from '../../../auth/signInWithGoogle'
 
 import { ReactComponent as GoogleImg} from '../../../assets/google.svg'
 import { LoginContainer, Form, Button, RedirectLink, GoogleLogin, Divider } from '../style'
