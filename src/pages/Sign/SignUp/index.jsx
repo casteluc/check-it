@@ -50,7 +50,7 @@ const SignUpPage = ({goToSignIn, ...props}) => {
                 <Button type="submit" value="cadastrar"/>
             </Form>
 
-            <RedirectLink to="/login">Já tem uma conta? Entre aqui</RedirectLink>
+            <RedirectLink to="/login">Já tem uma conta? Entre já</RedirectLink>
         </LoginContainer>
     )
 }
