@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import Header from '../common/Header';
 
 import { auth } from '../firebase'
 
@@ -25,6 +26,7 @@ const CustomRoute = ({isPrivate, ...props}) => {
 function Routes({user}) {
     return(
         <BrowserRouter>
+            <Header/>
             <Switch>
                 <CustomRoute isPrivate exact path="/" component={Home}/>
                 <CustomRoute exact path="/login" component={SignIn}/>

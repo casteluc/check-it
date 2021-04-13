@@ -1,26 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
+import { signOut } from '../../services/auth/signOut'
+
+import { HeaderContainer, LogoutButton } from './style'
 import {ReactComponent as LogoImage} from '../../assets/logo.svg'
 
 const Header = () => {
     return (
-        <header>
-            <div></div> {/* temporary element, will be replaced by the dark mode button */}
+        <HeaderContainer>
+            {/* DARK MODE BUTTON GOES HERE */}
+
             <div className="logo">
                 <LogoImage/>
+                <h1>Check-It</h1> 
             </div>
-            <nav>
-                <ul>
-                    <li>
-                        {/* <Link>Perfil</Link> */}
-                    </li>
-                    <li>
-                        {/* <Link>Início</Link> */}
-                    </li>
-                </ul>
-            </nav>
-        </header>
+
+            <LogoutButton onClick={() => {signOut()}}>sair</LogoutButton>
+            {/* NAV ELEMENT GOES HERE */}
+
+        </HeaderContainer>
     )
 }
 
