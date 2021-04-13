@@ -29,7 +29,7 @@ const SignUpPage = ({goToSignIn, ...props}) => {
             <Form onSubmit={handleSignUp}>
                 <div>
                     <label htmlFor="name">Seu nome</label>
-                    <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                    <input type="text" name="name" id="name" placeholder="Fulano de Tal" onChange={handleChange}/>
                 </div>
 
                 <div>
