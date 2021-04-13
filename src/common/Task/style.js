@@ -4,9 +4,11 @@ export const TaskContainer = styled.div`
     display: flex;
     align-items: center;
     margin: 10px 0;
+    max-width: 100%;
 
-    p {
-        width: 100%;
+    p { 
+        flex: 1;
+        max-width: 89%;
         font-weight: 500;
         outline: none;
         padding: 5px 10px;

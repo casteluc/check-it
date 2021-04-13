@@ -14,7 +14,7 @@ export default createReducer(initalState, {
         {
             id: nextTaskId(state),
             content: action.payload.content,
-            createdTime: getCurrentTime(),
+            // createdTime: getCurrentTime(),
             completed: false
         }
     ],
