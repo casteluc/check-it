@@ -23,15 +23,25 @@ const SignUpPage = ({goToSignIn, ...props}) => {
 
     return (
         <div>
-            <h3>Sign Up</h3>
+            <h3>Faça seu cadastro</h3>
+            
             <form onSubmit={handleSignUp}>
-                <input type="text" name="nickname" placeholder="nickname" value={credentials.nickname} onChange={handleChange}/>
-                <input type="email" name="email" placeholder="email" value={credentials.email} onChange={handleChange}/>
-                <input type="password" name="password" placeholder="senha" value={credentials.password} onChange={handleChange}/>
-                <input type="password" name="passowd-confirmation" placeholder="confirmação de senha" onChange={handleChange}/>
-                <input type="submit" value="Registrar"/>
+                <label htmlFor="name">Seu nome</label>
+                <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                
+                <label htmlFor="email">Seu e-mail</label>
+                <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                
+                <label htmlFor="password">Sua senha</label>
+                <input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                
+                <input type="checkbox" name="showPassword" id="showPassword"/>
+                <label htmlFor="showPassword">Mostrar senha</label>
+
+                <input type="submit" value="cadastrar"/>
             </form>
-            <p onClick={() => {goToSignIn()}}>go to sign in</p>
+
+            <p onClick={() => {goToSignIn()}}>Já tem uma conta? Entre aqui</p>
         </div>
     )
 }
