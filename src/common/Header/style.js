@@ -6,6 +6,7 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 0 10px #ddd;
+
     .logo {
         display: flex;
         align-items: center;
