@@ -24,15 +24,24 @@ const SignInPage = ({goToSignUp, ...props}) => {
 
     return (
         <div>
-            <h3>Sign In</h3>
-            <form onSubmit={handleSignIn}>
-                <input type="email" name="email" placeholder="email" onChange={handleChange}/>
-                <input type="password" name="password" placeholder="senha" onChange={handleChange}/>
-                <input type="submit" value="Registrar"/>
-            </form>
+            <h3>Faça login</h3>
+            
             <button onClick={handleGoogleLogin}>login with google</button>
-            <Link to="/">go to home</Link>
-            <p onClick={() => {goToSignUp()}}>go to sign up</p>
+            
+            <form onSubmit={handleSignIn}>
+                <label htmlFor="email">E-mail</label>
+                <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                
+                <label htmlFor="password">Senha</label>
+                <input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                
+                <input type="checkbox" name="showPassword" id="showPassword"/>
+                <label htmlFor="showPassword">Mostrar senha</label>
+
+                <input type="submit" value="entrar"/>
+            </form>
+
+            <p onClick={() => {goToSignUp()}}>Ainda não tem uma conta? Registre-se aqui</p>
         </div>
     )
 }

@@ -9,6 +9,7 @@ const Login = (props) => {
     const toggleRegistered = () => {
         setRegistered(!registered)
     }
+    
     return (
         <div>
             {registered ? 
