@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { signUp } from '../../../services/auth/signUp'
+import { LoginContainer, Form, Button, RedirectLink } from '../style'
 
 
 const SignUpPage = ({goToSignIn, ...props}) => {
@@ -22,27 +23,35 @@ const SignUpPage = ({goToSignIn, ...props}) => {
     }
 
     return (
-        <div>
+        <LoginContainer>
             <h3>Faça seu cadastro</h3>
-            
-            <form onSubmit={handleSignUp}>
-                <label htmlFor="name">Seu nome</label>
-                <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
-                
-                <label htmlFor="email">Seu e-mail</label>
-                <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
-                
-                <label htmlFor="password">Sua senha</label>
-                <input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
-                
-                <input type="checkbox" name="showPassword" id="showPassword"/>
-                <label htmlFor="showPassword">Mostrar senha</label>
 
-                <input type="submit" value="cadastrar"/>
-            </form>
+            <Form onSubmit={handleSignUp}>
+                <div>
+                    <label htmlFor="name">Seu nome</label>
+                    <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                </div>
 
-            <p onClick={() => {goToSignIn()}}>Já tem uma conta? Entre aqui</p>
-        </div>
+                <div>
+                    <label htmlFor="email">Seu e-mail</label>
+                    <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                </div>
+                
+                <div className="password">
+                    <label htmlFor="password">Sua senha</label>
+                    <input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                </div>
+                
+                <div className="show-password">
+                    <input type="checkbox" name="showPassword" id="showPassword"/>
+                    <label htmlFor="showPassword">Mostrar senha</label>
+                </div>
+
+                <Button type="submit" value="cadastrar"/>
+            </Form>
+
+            <RedirectLink onClick={() => {goToSignIn()}}>Já tem uma conta? Entre aqui</RedirectLink>
+        </LoginContainer>
     )
 }
 

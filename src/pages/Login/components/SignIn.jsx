@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 import { signIn, signInWithGoogle } from '../../../services/auth/signIn'
+
+import { ReactComponent as GoogleImg} from '../../../assets/google.svg'
+import { LoginContainer, Form, Button, RedirectLink, GoogleLogin, Divider } from '../style'
 
 const SignInPage = ({goToSignUp, ...props}) => {
     const [credentials, setCredentials] = useState({
@@ -23,26 +25,41 @@ const SignInPage = ({goToSignUp, ...props}) => {
     }
 
     return (
-        <div>
+        <LoginContainer>
             <h3>Faça login</h3>
             
-            <button onClick={handleGoogleLogin}>login with google</button>
+            <GoogleLogin onClick={handleGoogleLogin}>
+                <GoogleImg/>
+                <p>Entre com o Google</p>
+            </GoogleLogin>
+
+            <Divider>
+                <hr/>
+                <p>ou entre com seu e-mail</p>
+                <hr/>
+            </Divider>
             
-            <form onSubmit={handleSignIn}>
-                <label htmlFor="email">E-mail</label>
-                <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+            <Form onSubmit={handleSignIn}>
+                <div>
+                    <label htmlFor="email">E-mail</label>
+                    <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                </div>
                 
-                <label htmlFor="password">Senha</label>
-                <input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                <div className="password">
+                    <label htmlFor="password">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                </div>
                 
-                <input type="checkbox" name="showPassword" id="showPassword"/>
-                <label htmlFor="showPassword">Mostrar senha</label>
+                <div className="show-password">
+                    <input type="checkbox" name="showPassword" id="showPassword"/>
+                    <label htmlFor="showPassword">Mostrar senha</label>
+                </div>
 
-                <input type="submit" value="entrar"/>
-            </form>
+                <Button type="submit" value="entrar"/>
+            </Form>
 
-            <p onClick={() => {goToSignUp()}}>Ainda não tem uma conta? Registre-se aqui</p>
-        </div>
+            <RedirectLink onClick={() => {goToSignUp()}}>Ainda não tem uma conta? Registre-se aqui</RedirectLink>
+        </LoginContainer>
     )
 }
 
