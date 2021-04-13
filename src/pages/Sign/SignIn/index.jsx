@@ -58,7 +58,7 @@ const SignInPage = ({goToSignUp, ...props}) => {
                 <Button type="submit" value="entrar"/>
             </Form>
 
-            <RedirectLink onClick={() => {goToSignUp()}}>Ainda não tem uma conta? Registre-se aqui</RedirectLink>
+            <RedirectLink to="/register">Ainda não tem uma conta? Registre-se aqui</RedirectLink>
         </LoginContainer>
     )
 }
