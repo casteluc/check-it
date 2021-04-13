@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import GlobalStyle from './style/globalStyle'
 import store from './store'
-import Routes from './routes'
+import Routes from './pages/routes'
 import { auth } from './firebase'
 
 auth.onAuthStateChanged(user => {

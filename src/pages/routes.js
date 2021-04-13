@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
-import { auth } from './firebase'
+import { auth } from '../firebase'
 
-import Home from './pages/Home';
-import SignIn from './pages/Sign/SignIn';
-import SignUp from './pages/Sign/SignUp';
+import Home from './Home';
+import SignIn from './Sign/SignIn';
+import SignUp from './Sign/SignUp';
 
 
 const CustomRoute = ({isPrivate, ...props}) => {
