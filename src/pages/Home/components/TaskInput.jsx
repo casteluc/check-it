@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { fectchAddTask } from '../../../store/ducks/tasks/thunks'
+import fectchAddTask from '../../../store/ducks/tasks/thunks/fetchAddTask'
 
 import { Form } from '../style'
 

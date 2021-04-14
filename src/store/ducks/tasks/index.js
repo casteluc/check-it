@@ -5,10 +5,10 @@ const initalState = []
 export const addTask = createAction('tasks/addTask')
 export const editTask = createAction('tasks/editTask')
 export const deleteTask = createAction('tasks/deleteTask')
-export const completeTask = createAction('tasks/completeTask')
+export const toggleCompleteTask = createAction('tasks/toggleCompleteTask')
 
 export default createReducer(initalState, {
-    [addTask.type]: (state, action) => [...state, action.payload],
+    [addTask.type]: (state, action) => [...state, {...action.payload.task, id: action.payload.id}],
 
     [editTask.type]: (state, action) => state.map(task => {
         if (task.id === action.payload.targetId) {
@@ -20,7 +20,7 @@ export default createReducer(initalState, {
 
     [deleteTask.type]: (state, action) => state.filter(task => task.id !== action.payload.targetId),
 
-    [completeTask.type]: (state, action) => state.map(task => {
+    [toggleCompleteTask.type]: (state, action) => state.map(task => {
         if (task.id === action.payload.targetId) {
             return {...task, completed: !task.completed}
         } else {
