@@ -9,7 +9,11 @@ export const toggleCompleteTask = createAction('tasks/toggleCompleteTask')
 export const clearState = createAction('tasks/clearState')
 
 export default createReducer(initalState, {
-    [addTask.type]: (state, action) => [...state, {...action.payload.task, id: action.payload.id}],
+    [addTask.type]: (state, action) => [...state, {...action.payload.task, id: action.payload.id}]
+        .sort((a, b) => {
+        console.log(new Date(a.createdTime) - new Date(b.createdTime))
+        return new Date(a.createdTime) - new Date(b.createdTime)
+    }).reverse(),
 
     [editTask.type]: (state, action) => state.map(task => {
         if (task.id === action.payload.targetId) {
