@@ -1,16 +1,14 @@
-import { connect, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import {ReactComponent as TrashImage} from '../../assets/trash.svg'
 import {ReactComponent as CheckImage} from '../../assets/check.svg'
 
 import fetchToggleCompleteTask from '../../store/ducks/tasks/thunks/fetchToggleCompleteTask'
 import fetchDeleteTask from '../../store/ducks/tasks/thunks/fetchDeleteTask'
-import { TaskContainer, Button} from './style'
-import { useState } from 'react'
+import { TaskContainer, TaskContent, Button } from './style'
 import fectchEditTask from '../../store/ducks/tasks/thunks/fetchEditTask'
 
 const Task = ({task, ...props}) => {
-    const [content, setContent] = useState(task.content)
     const dispatch = useDispatch()
 
     const handleEdit = (e) => {
@@ -30,13 +28,14 @@ const Task = ({task, ...props}) => {
     
     return (
         <TaskContainer>
-            <p 
+            <TaskContent 
                 spellCheck="false" 
                 contentEditable 
                 onBlur={handleEdit} 
-                suppressContentEditableWarning={true}>
+                suppressContentEditableWarning={true}
+                completed={task.completed}>
                     {task.content}
-            </p>
+            </TaskContent>
 
             <div className="buttons">
                 <Button className="delete-button" onClick={handleDelete}>

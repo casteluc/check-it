@@ -6,17 +6,6 @@ export const TaskContainer = styled.div`
     margin: 10px 0;
     max-width: 100%;
 
-    p { 
-        flex: 1;
-        max-width: 89%;
-        font-weight: 500;
-        outline: none;
-        padding: 5px 10px;
-        border-radius: 3px;
-        background-color: #F0F0F0;
-        box-sizing: border-box;
-    }
-
     .buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -25,6 +14,17 @@ export const TaskContainer = styled.div`
     }
 `
 
+export const TaskContent = styled.p`
+    flex: 1;
+    max-width: 89%;
+    font-weight: 500;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #F0F0F0;
+    box-sizing: border-box;
+    text-decoration: ${props => props.completed ? "line-through;" : "none"}
+`
 export const Button = styled.button`
     display: flex;
     align-items: center;
