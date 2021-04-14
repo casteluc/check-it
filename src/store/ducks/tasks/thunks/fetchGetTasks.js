@@ -1,4 +1,4 @@
-import { addTask } from '..'
+import { addTask, clearState } from '..'
 import { db, auth } from '../../../../firebase'
 
 const fectchGetTasks = () => (dispatch, getState) => {
@@ -6,6 +6,7 @@ const fectchGetTasks = () => (dispatch, getState) => {
     
     db.collection("users").doc(user.uid).collection("tasks").get()
         .then(query => {
+            dispatch(clearState())
             query.forEach((doc) => {
                 dispatch(addTask({task: doc.data(), id: doc.id}))                 
             })

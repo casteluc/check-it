@@ -6,6 +6,7 @@ export const addTask = createAction('tasks/addTask')
 export const editTask = createAction('tasks/editTask')
 export const deleteTask = createAction('tasks/deleteTask')
 export const toggleCompleteTask = createAction('tasks/toggleCompleteTask')
+export const clearState = createAction('tasks/clearState')
 
 export default createReducer(initalState, {
     [addTask.type]: (state, action) => [...state, {...action.payload.task, id: action.payload.id}],
@@ -26,5 +27,7 @@ export default createReducer(initalState, {
         } else {
             return task
         }
-    })
+    }),
+
+    [clearState.type]: (state, action) => []
 })
