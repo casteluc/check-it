@@ -2,17 +2,12 @@ import { db, auth } from '../../../../firebase'
 
 import { deleteTask } from "../index"
 
-const fectchDeleteTask = (content) => (dispatch, getState) => {
+const fectchDeleteTask = (targetId) => (dispatch, getState) => {
     let user = auth.currentUser
-    let task = {
-        content,
-        createdTime: Date.now(),
-        completed: false
-    }
-    
-    db.collection("users").doc(user.uid).collection("tasks").add(task)
+
+    db.collection("users").doc(user.uid).collection("tasks").doc(targetId).delete()
         .then(ref => {
-            dispatch(deleteTask({content, id: ref.id}))
+            dispatch(deleteTask({targetId}))
         }).catch(err => {
             console.log(err)
         })

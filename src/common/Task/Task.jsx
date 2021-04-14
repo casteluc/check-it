@@ -4,6 +4,7 @@ import {ReactComponent as TrashImage} from '../../assets/trash.svg'
 import {ReactComponent as CheckImage} from '../../assets/check.svg'
 
 import fetchToggleCompleteTask from '../../store/ducks/tasks/thunks/fetchToggleCompleteTask'
+import fectchDeleteTask from '../../store/ducks/tasks/thunks/fetchDeleteTask'
 import { TaskContainer, Button} from './style'
 import { useState } from 'react'
 
@@ -16,11 +17,14 @@ const Task = ({task, ...props}) => {
     }
 
     const handleDelete = (e) => {
-        // props.deleteTask({targetId: task.id})
+        dispatch(fectchDeleteTask(task.id))
     }
     
     const handleToggleComplete = (e) => {
-        dispatch(fetchToggleCompleteTask({targetId: task.id}))
+        dispatch(fetchToggleCompleteTask({
+            targetId: task.id,
+            completed: task.completed
+        }))
     }
     
     return (
