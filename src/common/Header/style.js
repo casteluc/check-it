@@ -23,12 +23,3 @@ export const HeaderContainer = styled.header`
         }
     }
 `
-
-export const LogoutButton = styled.button`
-    background-color: transparent;
-    border: 1px solid #C4C4C4;
-    border-radius: 3px;
-    padding: 5px 30px;
-    font-weight: 600;
-    cursor: pointer;
-`

@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 
 import signUp from '../../../auth/signUp'
-import { LoginContainer, Form, Button, RedirectLink } from '../style'
+
+import Input from '../../../style/components/Input'
+import ShowPassword from '../components/ShowPassword'
+import { LoginContainer, FormField, RedirectLink, SignButton } from '../style'
 
 
 const SignUpPage = ({goToSignIn, ...props}) => {
@@ -26,29 +29,26 @@ const SignUpPage = ({goToSignIn, ...props}) => {
         <LoginContainer>
             <h3>Faça seu cadastro</h3>
 
-            <Form onSubmit={handleSignUp}>
-                <div>
+            <form onSubmit={handleSignUp}>
+                <FormField>
                     <label htmlFor="name">Seu nome</label>
-                    <input type="text" name="name" id="name" placeholder="Fulano de Tal" onChange={handleChange}/>
-                </div>
+                    <Input type="text" name="name" id="name" placeholder="Fulano de Tal" onChange={handleChange}/>
+                </FormField>
 
-                <div>
+                <FormField>
                     <label htmlFor="email">Seu e-mail</label>
-                    <input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
-                </div>
+                    <Input type="email" name="email" id="email"placeholder="email@website.com" onChange={handleChange}/>
+                </FormField>
                 
-                <div className="password">
+                <FormField className="password">
                     <label htmlFor="password">Sua senha</label>
-                    <input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
-                </div>
+                    <Input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                </FormField>
                 
-                <div className="show-password">
-                    <input type="checkbox" name="showPassword" id="showPassword"/>
-                    <label htmlFor="showPassword">Mostrar senha</label>
-                </div>
+                <ShowPassword/>
 
-                <Button type="submit" value="cadastrar"/>
-            </Form>
+                <SignButton fullWidth type="submit" value="cadastrar"/>
+            </form>
 
             <RedirectLink to="/login">Já tem uma conta? Entre já</RedirectLink>
         </LoginContainer>

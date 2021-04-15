@@ -17,21 +17,7 @@ export const Form = styled.form`
     display: flex;
     margin: 10px 0;
 
-    input {
-        padding: 5px 10px;
-        border-radius: 3px;
-    }
-
-    input[type="text"] {
-        width: 100%;
-        background-color: #F0F0F0;
-    }
-
     input[type="submit"] {
-        color: #FAFAFA;
-        background-color: #FD4E0C;
-        padding: 5px 20px;
         margin-left: 5px;
-        font-weight: 500;
     }
 `

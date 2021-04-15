@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 import fectchAddTask from '../../../store/ducks/tasks/thunks/fetchAddTask'
 
 import { Form } from '../style'
+import Input from '../../../style/components/Input'
 
 const TaskInput = (props) => {
     const dispatch = useDispatch()
@@ -18,8 +19,8 @@ const TaskInput = (props) => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <input autoComplete="off" type="text" name="task" placeholder="Insira uma nova tarefa aqui"/>
-            <input type="submit" value="adicionar"/>
+            <Input fullWidth autoComplete="off" type="text" name="task" placeholder="Insira uma nova tarefa aqui"/>
+            <Input type="submit" value="adicionar"/>
         </Form>
     )
 }
