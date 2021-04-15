@@ -8,12 +8,8 @@ import { LoginContainer, FormField, RedirectLink, SignButton } from '../style'
 
 
 const SignUpPage = ({goToSignIn, ...props}) => {
-    const [credentials, setCredentials] = useState({
-        nickname: '',
-        email: '',
-        password: '',
-        passwordConfirmation: '',
-    })
+    const credentialInitialState = { name: '', email: '', password: ''}
+    const [credentials, setCredentials] = useState(credentialInitialState)
 
     const handleChange = (e) => {
         setCredentials({...credentials, [e.target.name]: e.target.value})

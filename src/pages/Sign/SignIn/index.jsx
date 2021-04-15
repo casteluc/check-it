@@ -9,10 +9,8 @@ import { LoginContainer, FormField, RedirectLink, GoogleLogin, Divider, SignButt
 import ShowPassword from '../components/ShowPassword'
 
 const SignInPage = ({goToSignUp, ...props}) => {
-    const [credentials, setCredentials] = useState({
-        email: '',
-        password: '',
-    })
+    const credentialInitialState = { email: '', password: '' }
+    const [credentials, setCredentials] = useState(credentialInitialState)
 
     const handleChange = (e) => {
         setCredentials({...credentials, [e.target.name]: e.target.value})
