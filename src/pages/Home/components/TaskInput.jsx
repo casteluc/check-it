@@ -18,8 +18,8 @@ const TaskInput = (props) => {
     }
 
     return (
-        <Form spellCheck="false" onSubmit={handleSubmit}>
-            <Input fullWidth autoComplete="off" type="text" name="task" placeholder="Insira uma nova tarefa aqui"/>
+        <Form onSubmit={handleSubmit}>
+            <Input fullWidth spellCheck="false" autoComplete="off" type="text" name="task" placeholder="Insira uma nova tarefa aqui"/>
             <Input type="submit" value="adicionar"/>
         </Form>
     )
