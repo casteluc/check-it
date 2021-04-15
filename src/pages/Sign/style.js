@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom'
 import Input from '../../style/components/Input'
 import Button from '../../style/components/Button'
 
-export const LoginContainer = styled.div`
+export const SignContainer = styled.div`
     max-width: 400px;
-    margin: 30px auto 0 auto;
-
+    margin: 20px auto;
+    
     h3 {
         font-size: 2.5rem;
         text-align: center;
         margin-bottom: 25px;
+        line-height: 3rem;
     }
 `
 

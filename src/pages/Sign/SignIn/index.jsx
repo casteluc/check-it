@@ -5,7 +5,7 @@ import signInWithGoogle from '../../../auth/signInWithGoogle'
 
 import Input from '../../../style/components/Input'
 import { ReactComponent as GoogleImg} from '../../../assets/google.svg'
-import { LoginContainer, FormField, RedirectLink, GoogleLogin, Divider, SignButton } from '../style'
+import { SignContainer, FormField, RedirectLink, GoogleLogin, Divider, SignButton } from '../style'
 import ShowPassword from '../components/ShowPassword'
 
 const SignInPage = ({goToSignUp, ...props}) => {
@@ -26,10 +26,10 @@ const SignInPage = ({goToSignUp, ...props}) => {
     }
 
     return (
-        <LoginContainer>
+        <SignContainer>
             <h3>Faça login</h3>
             
-            <GoogleLogin fullWidth onlyBorder padding="15px 0" onClick={handleGoogleLogin}>
+            <GoogleLogin fullWidth onlyBorder padding="10px 0" onClick={handleGoogleLogin}>
                 <GoogleImg/>
                 <p>Entre com o Google</p>
             </GoogleLogin>
@@ -57,7 +57,7 @@ const SignInPage = ({goToSignUp, ...props}) => {
             </form>
 
             <RedirectLink to="/register">Ainda não tem uma conta? Registre-se aqui</RedirectLink>
-        </LoginContainer>
+        </SignContainer>
     )
 }
 

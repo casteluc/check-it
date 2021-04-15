@@ -18,7 +18,6 @@ export const TaskContainer = styled.div`
 
 export const TaskContent = styled(Input)`
     flex: 1;
-    max-width: 89%;
     font-weight: 500;
     text-decoration: ${props => props.completed ? "line-through;" : "none"};
 `

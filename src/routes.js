@@ -7,7 +7,7 @@ import { auth } from './firebase'
 import Home from './pages/Home';
 import SignIn from './pages/Sign/SignIn';
 import SignUp from './pages/Sign/SignUp';
-
+import { MainContainer } from './style/components/Container'
 
 const CustomRoute = ({isPrivate, ...props}) => {
     const user = auth.currentUser;
@@ -28,9 +28,11 @@ function Routes({user}) {
         <BrowserRouter>
             <Header/>
             <Switch>
-                <CustomRoute isPrivate exact path="/" component={Home}/>
-                <CustomRoute exact path="/login" component={SignIn}/>
-                <CustomRoute exact path="/register" component={SignUp}/>
+                <MainContainer>
+                    <CustomRoute isPrivate exact path="/" component={Home}/>
+                    <CustomRoute exact path="/login" component={SignIn}/>
+                    <CustomRoute exact path="/register" component={SignUp}/>
+                </MainContainer>
             </Switch>
         </BrowserRouter>
     )

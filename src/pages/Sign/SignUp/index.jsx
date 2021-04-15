@@ -4,7 +4,7 @@ import signUp from '../../../auth/signUp'
 
 import Input from '../../../style/components/Input'
 import ShowPassword from '../components/ShowPassword'
-import { LoginContainer, FormField, RedirectLink, SignButton } from '../style'
+import { SignContainer, FormField, RedirectLink, SignButton } from '../style'
 
 
 const SignUpPage = ({goToSignIn, ...props}) => {
@@ -22,7 +22,7 @@ const SignUpPage = ({goToSignIn, ...props}) => {
     }
 
     return (
-        <LoginContainer>
+        <SignContainer>
             <h3>Faça seu cadastro</h3>
 
             <form onSubmit={handleSignUp}>
@@ -47,7 +47,7 @@ const SignUpPage = ({goToSignIn, ...props}) => {
             </form>
 
             <RedirectLink to="/login">Já tem uma conta? Entre já</RedirectLink>
-        </LoginContainer>
+        </SignContainer>
     )
 }
 
