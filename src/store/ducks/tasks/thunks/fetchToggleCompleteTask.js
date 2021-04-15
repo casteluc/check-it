@@ -7,6 +7,7 @@ const fetchToggleCompleteTask = ({targetId, completed}) => (dispatch, getState) 
 
     db.collection("users").doc(user.uid).collection("tasks").doc(targetId).update({completed: !completed})
         .then(ref => {
+            // toggle completed task on the state if completed task was changed in the db
             dispatch(toggleCompleteTask({targetId: targetId}))
         }).catch(err => {
             console.log(err)

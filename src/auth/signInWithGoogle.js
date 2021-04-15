@@ -6,6 +6,7 @@ const signInWithGoogle = () => {
             let uid = res.user.uid
             let uidsRef = db.collection("uids")
 
+            // creates a new user on db only if the user has never logged in
             uidsRef.get().then((ref) => {
                 console.log(ref)
                 if (ref.exists && ref.data() !== uid) {

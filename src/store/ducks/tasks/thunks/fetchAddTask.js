@@ -12,6 +12,7 @@ const fectchAddTask = (content) => (dispatch, getState) => {
     
     db.collection("users").doc(user.uid).collection("tasks").add(task)
         .then(ref => {
+            // if task was created in db, updates the tasks state
             dispatch(addTask({task, id: ref.id}))
         }).catch(err => {
             console.log(err)

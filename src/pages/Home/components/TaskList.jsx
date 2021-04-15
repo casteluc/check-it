@@ -12,11 +12,6 @@ const TaskList = (props) => {
         dispatch(fectchGetTasks())
     }, [dispatch])
 
-    // useEffect(() => {
-    //     console.log(tasks)
-        
-    // }, [tasks])
-
     return (
         <div>
             {   

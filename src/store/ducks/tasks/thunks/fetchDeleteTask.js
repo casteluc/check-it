@@ -7,6 +7,7 @@ const fectchDeleteTask = (targetId) => (dispatch, getState) => {
 
     db.collection("users").doc(user.uid).collection("tasks").doc(targetId).delete()
         .then(ref => {
+            // if task was deleted in db, updates the tasks state
             dispatch(deleteTask({targetId}))
         }).catch(err => {
             console.log(err)

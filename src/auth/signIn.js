@@ -3,7 +3,7 @@ import { auth } from "../firebase"
 const signIn = ({email, password}) => {
     auth.signInWithEmailAndPassword(email, password)
         .then((res) => {
-            console.log("logado")
+            return 
         }).catch((err) => {
             console.log(err)
         })
