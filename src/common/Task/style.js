@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from '../../style/components/Button'
+import Input from '../../style/components/Input'
 
 export const TaskContainer = styled.div`
     display: flex;
@@ -15,7 +16,7 @@ export const TaskContainer = styled.div`
     }
 `
 
-export const TaskContent = styled.p`
+export const TaskContent = styled(Input)`
     flex: 1;
     max-width: 89%;
     font-weight: 500;

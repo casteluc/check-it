@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import {ReactComponent as TrashImage} from '../../assets/trash.svg'
@@ -8,11 +9,12 @@ import fetchDeleteTask from '../../store/ducks/tasks/thunks/fetchDeleteTask'
 import { TaskContainer, TaskContent, TaskButton } from './style'
 import fectchEditTask from '../../store/ducks/tasks/thunks/fetchEditTask'
 
-const Task = ({task, ...props}) => {
+const Task = ({task}) => {
+    const [content, setContent] = useState(task.content)
     const dispatch = useDispatch()
 
     const handleEdit = (e) => {
-        dispatch(fectchEditTask({targetId: task.id, content: e.target.innerHTML}))
+        dispatch(fectchEditTask({targetId: task.id, content}))
     }
 
     const handleDelete = (e) => {
@@ -30,13 +32,12 @@ const Task = ({task, ...props}) => {
         <TaskContainer>
             <TaskContent 
                 spellCheck="false" 
-                contentEditable 
+                onChange={(e) => {setContent(e.target.value)}}
                 onBlur={handleEdit} 
-                suppressContentEditableWarning={true}
-                completed={task.completed}>
-                    {task.content}
-            </TaskContent>
-
+                completed={task.completed}
+                value={content}
+            />
+                    
             <div className="buttons">
                 <TaskButton padding="5px 5px" className="delete-button" onClick={handleDelete}>
                     <TrashImage/>
