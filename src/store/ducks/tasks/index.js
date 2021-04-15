@@ -11,7 +11,6 @@ export const clearTasks = createAction('tasks/clearTasks')
 export default createReducer(initalState, {
     [addTask.type]: (state, action) => [...state, {...action.payload.task, id: action.payload.id}]
         .sort((a, b) => {
-        console.log(new Date(a.createdTime) - new Date(b.createdTime))
         return new Date(a.createdTime) - new Date(b.createdTime)
     }).reverse(),
 
