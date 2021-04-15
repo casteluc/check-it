@@ -68,6 +68,7 @@ export const SignButton = styled(Input)`
     &[type="submit"] {
         padding: 10px 20px;
         margin-top: 15px;
+        margin-bottom: 5px;
         font-weight: 500;
     }
 `

@@ -5,26 +5,22 @@ import signInWithGoogle from '../../../auth/signInWithGoogle'
 
 import Input from '../../../style/components/Input'
 import { ReactComponent as GoogleImg} from '../../../assets/google.svg'
-import { SignContainer, FormField, RedirectLink, GoogleLogin, Divider, SignButton } from '../style'
-import ShowPassword from '../components/ShowPassword'
+import { SignContainer, FormField, RedirectLink, GoogleLogin, Divider, SignButton, ShowPasswordContainer } from '../style'
 
 const SignInPage = ({goToSignUp, ...props}) => {
     const credentialInitialState = { email: '', password: '' }
     const [credentials, setCredentials] = useState(credentialInitialState)
-
-    const handleChange = (e) => {
-        setCredentials({...credentials, [e.target.name]: e.target.value})
-    }
-
-    const handleGoogleLogin = (e) => {
-        signInWithGoogle()
-    }
+    const [showPassword, setShowPassword] = useState(false)
     
+    const toggleshowPassword = (e) => { setShowPassword(e.target.checked) }
+    const handleChange = (e) => { setCredentials({...credentials, [e.target.name]: e.target.value}) }
+    const handleGoogleLogin = (e) => { signInWithGoogle() }
     const handleSignIn = (e) => {
         e.preventDefault()
         signIn(credentials)
     }
 
+    
     return (
         <SignContainer>
             <h3>Faça login</h3>
@@ -48,10 +44,13 @@ const SignInPage = ({goToSignUp, ...props}) => {
                 
                 <FormField className="password">
                     <label htmlFor="password">Senha</label>
-                    <Input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                    <Input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
                 </FormField>
                 
-                <ShowPassword/>
+                <ShowPasswordContainer className="show-password">
+                    <input type="checkbox" name="showPassword" id="showPassword" checked={showPassword} onChange={toggleshowPassword}/>
+                    <label htmlFor="showPassword">Mostrar senha</label>
+                </ShowPasswordContainer>
 
                 <SignButton fullWidth type="submit" value="entrar"/>
             </form>

@@ -3,22 +3,19 @@ import React, { useState } from 'react'
 import signUp from '../../../auth/signUp'
 
 import Input from '../../../style/components/Input'
-import ShowPassword from '../components/ShowPassword'
-import { SignContainer, FormField, RedirectLink, SignButton } from '../style'
+import { SignContainer, FormField, RedirectLink, SignButton, ShowPasswordContainer } from '../style'
 
 
 const SignUpPage = ({goToSignIn, ...props}) => {
     const credentialInitialState = { name: '', email: '', password: ''}
     const [credentials, setCredentials] = useState(credentialInitialState)
-
-    const handleChange = (e) => {
-        setCredentials({...credentials, [e.target.name]: e.target.value})
-    }
+    const [showPassword, setShowPassword] = useState(false)
     
+    const toggleshowPassword = (e) => { setShowPassword(e.target.checked) }
+    const handleChange = (e) => { setCredentials({...credentials, [e.target.name]: e.target.value}) }
     const handleSignUp = (e) => {
         e.preventDefault()
         signUp(credentials)
-        console.log("singed up")
     }
 
     return (
@@ -38,10 +35,13 @@ const SignUpPage = ({goToSignIn, ...props}) => {
                 
                 <FormField className="password">
                     <label htmlFor="password">Sua senha</label>
-                    <Input type="password" name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
+                    <Input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="min. 6 carácteres" onChange={handleChange}/>
                 </FormField>
                 
-                <ShowPassword/>
+                <ShowPasswordContainer className="show-password">
+                    <input checked={showPassword} onChange={toggleshowPassword} type="checkbox" name="showPassword" id="showPassword"/>
+                    <label htmlFor="showPassword">Mostrar senha</label>
+                </ShowPasswordContainer>
 
                 <SignButton fullWidth type="submit" value="cadastrar"/>
             </form>
