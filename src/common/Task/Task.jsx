@@ -5,7 +5,7 @@ import {ReactComponent as CheckImage} from '../../assets/check.svg'
 
 import fetchToggleCompleteTask from '../../store/ducks/tasks/thunks/fetchToggleCompleteTask'
 import fetchDeleteTask from '../../store/ducks/tasks/thunks/fetchDeleteTask'
-import { TaskContainer, TaskContent, Button } from './style'
+import { TaskContainer, TaskContent, TaskButton } from './style'
 import fectchEditTask from '../../store/ducks/tasks/thunks/fetchEditTask'
 
 const Task = ({task, ...props}) => {
@@ -38,13 +38,13 @@ const Task = ({task, ...props}) => {
             </TaskContent>
 
             <div className="buttons">
-                <Button className="delete-button" onClick={handleDelete}>
+                <TaskButton padding="5px 5px" className="delete-button" onClick={handleDelete}>
                     <TrashImage/>
-                </Button>
+                </TaskButton>
 
-                <Button className="checkbox" completed={task.completed} onClick={handleToggleComplete}>
+                <TaskButton padding="5px 5px" className="checkbox" completed={task.completed} onClick={handleToggleComplete}>
                     <CheckImage/>
-                </Button>
+                </TaskButton>
             </div>
         </TaskContainer>
     )

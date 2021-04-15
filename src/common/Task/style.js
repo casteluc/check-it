@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Button from '../../style/components/Button'
 
 export const TaskContainer = styled.div`
     display: flex;
@@ -18,28 +19,34 @@ export const TaskContent = styled.p`
     flex: 1;
     max-width: 89%;
     font-weight: 500;
-    outline: none;
     padding: 5px 10px;
     border-radius: 3px;
     background-color: #F0F0F0;
     box-sizing: border-box;
-    text-decoration: ${props => props.completed ? "line-through;" : "none"}
+    text-decoration: ${props => props.completed ? "line-through;" : "none"};
 `
-export const Button = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 5px;
+
+export const TaskButton = styled(Button)`
     background-color: ${props => props.completed ? "#FD4E0C" : "#F0F0F0"};
     border-radius: 3px;
-
+    color: transparent;
+    transition: all 0.2s;
+    
     :hover {
         cursor: pointer;
+
+        svg.trash path{
+            fill: #FD4E0C
+        }
     }
 
     svg {
         width: 20px;
         height: 20px;
+
+        path {
+            transition: all 0.2s;   
+        }
     }
 
     svg.check {
@@ -48,16 +55,9 @@ export const Button = styled.button`
         }
     }
 
-    svg.trash {
-
-        :hover {
-            path {
-                fill: #FD4E0C
-            } 
-        }
-        path {
-            fill: #6d6d6d;
-        }
+    svg.trash path{
+        fill: #6d6d6d;
+        
     }
 
 `
