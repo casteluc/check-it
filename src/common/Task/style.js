@@ -20,10 +20,6 @@ export const TaskContent = styled(Input)`
     flex: 1;
     max-width: 89%;
     font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 3px;
-    background-color: #F0F0F0;
-    box-sizing: border-box;
     text-decoration: ${props => props.completed ? "line-through;" : "none"};
 `
 
