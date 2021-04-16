@@ -4,7 +4,7 @@ import { auth } from '../../firebase'
 import signOut from '../../auth/signOut'
 
 import Button from '../../style/components/Button'
-import { HeaderContainer, LogoutButton } from './style'
+import { HeaderContainer } from './style'
 import {ReactComponent as LogoImage} from '../../assets/logo.svg'
 
 const Header = () => {
