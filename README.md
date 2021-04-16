@@ -1,5 +1,3 @@
-https://github.com/casteluc/check-it/blob/master/src/assets/preview.gif
-
 <p align="center">
   <img alt="GitHub" src="https://img.shields.io/github/license/casteluc/check-it?style=for-the-badge">
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/casteluc/check-it?style=for-the-badge">
@@ -50,4 +48,4 @@ $ git push origin <nome_da_branch>
 # 5. Abra o seu repositório clonado no GitHub dentro da branch que você criou e faça a solicitação de pull.
 ```
 
-> [Faça um fork desse projeto aqui](https://github.com/casteluc/check-it/fork).
+[Faça um fork desse projeto aqui](https://github.com/casteluc/check-it/fork).
