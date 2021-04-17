@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Button from '../../style/components/Button'
 
 export const HomeContainer = styled.section`
     max-width: 620px;
@@ -20,4 +21,11 @@ export const Form = styled.form`
     input[type="submit"] {
         margin-left: 5px;
     }
+`
+
+export const RefreshButton = styled(Button)`
+    margin-left: 5px;
+
+    svg path { fill: #6d6d6d; transition: all 0.2s; }
+    &:hover { svg path { fill: #FD4E0C; }}
 `
