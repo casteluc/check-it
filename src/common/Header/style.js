@@ -6,6 +6,10 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 0 10px #ddd;
+    position: sticky;
+    top: 0;
+    /* width: 100%; */
+    background-color: #fafafa;
 
     .logo {
         display: flex;
