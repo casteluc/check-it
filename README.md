@@ -28,7 +28,7 @@ Aqui estão algumas das funcionalidades e correções que ainda faltam implement
 - [x] Botão de mostrar senha
 - [ ] Validação dos formulários (login e logout)
 - [ ] Verificação de e-mail e recuperação de senha
-- [ ] Barra inferior com fade
+- [x] Barra inferior com fade
 
 ## 📫 Como contribuir para o Check-It
 Para contribuir com o projeto, siga estas etapas:

@@ -23,6 +23,15 @@ export const Form = styled.form`
     }
 `
 
+export const FadeBar = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to top, #fafafa, transparent);
+    bottom: 0;
+    left: 0;
+`
+
 export const RefreshButton = styled(Button)`
     margin-left: 5px;
 
