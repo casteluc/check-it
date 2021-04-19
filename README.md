@@ -24,11 +24,11 @@ Aqui estão algumas das funcionalidades e correções que ainda faltam implement
 - [ ] Página de perfil com estatísticas do usuário
 - [ ] Funcionalidade de modo escuro
 - [ ] Animações em geral
-- [ ] Botão de refresh pra apagar as tarefas concluídas
+- [x] Botão de refresh pra apagar as tarefas concluídas
 - [x] Botão de mostrar senha
 - [ ] Validação dos formulários (login e logout)
 - [ ] Verificação de e-mail e recuperação de senha
-- [ ] Barra inferior com fade
+- [x] Barra inferior com fade
 
 ## 📫 Como contribuir para o Check-It
 Para contribuir com o projeto, siga estas etapas:
